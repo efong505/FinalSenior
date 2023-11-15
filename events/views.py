@@ -35,7 +35,7 @@ def add_event(request):
         form = EventForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/add_event?submitted=True')
+            return HttpResponseRedirect('/calendar/add_event/?submitted=True')
          
     else:
         form = EventForm
@@ -70,7 +70,7 @@ def add_eventlocation(request):
         form = EventLocationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/add_eventlocation?submitted=True')
+            return HttpResponseRedirect('/calendar/add_eventlocation/?submitted=True')
          
     
          
