@@ -1,24 +1,5 @@
 {% load static %}
-
-<style>
-    /* Modify the background color */
-     
-    .navbar-custom {
-        background-color: #279eff;
-
-    }
-    header {
-    /* background:#4dcc43; */
-    background-color: #279EFF;
-    /* background-color: #0C356A; */
-    overflow:auto;
-    {% comment %} padding:10px 20px; {% endcomment %}
-    /* border-bottom:6px solid #3fad37; */
-    border-bottom:6px solid #40F8FF;
-}
-
-</style>
-<nav class="navbar navbar-expand-lg navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-info bg-info">
     <div class="container-fluid">
 
     
@@ -29,12 +10,15 @@
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link text-white" href="{% url 'todo-index' %}">Todo List <span class="sr-only">(current)</span></a>
-                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
+                </li> 
                 <li class="nav-item">
                     {% if request.user.is_authenticated %}<a class="nav-link text-white" href="{% url 'home' %}" class="menu-bar">&nbsp;&nbsp;&nbsp;Calendar</a> {% endif %}
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="{% url 'todo-index' %}">Todo List <span class="sr-only">(current)</span></a>
+                </li>                
                 <li class="nav-item">
                     {% if request.user.is_authenticated %}<a class="nav-link text-white" href="{% url 'notes.list' %}" class="menu-bar">&nbsp;&nbsp;&nbsp;Notes</a> {% endif %}
                 </li>
@@ -44,5 +28,3 @@
         </div>
     </div>
   </nav>
-
-  <header></header>
